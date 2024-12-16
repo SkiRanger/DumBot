@@ -66,7 +66,7 @@
     <div class="container">
         <h1>Ask Your Question</h1>
         <!-- Input Field -->
-        <input type="text" id="questionInput" placeholder="ur question here" />
+        <input type="text" id="questionInput" placeholder="your question here" />
         <br>
         <!-- Submit Button -->
         <button onclick="submitQuestion()">submit</button>
