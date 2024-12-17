@@ -1,0 +1,16 @@
+{
+  "name": "openai-chat",
+  "version": "1.0.0",
+  "description": "Chat with OpenAI API securely using Vercel serverless functions.",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "author": "",
+  "license": "MIT"
+}
