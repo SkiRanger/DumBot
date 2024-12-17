@@ -7,7 +7,7 @@
         /* Basic styling for the UI */
         body {
             font-family: Arial, sans-serif;
-            background-color: #FFFFFF;
+            background-color: #FFDAB9;
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,7 +18,7 @@
 
         .container {
             text-align: center;
-            background: #606060;
+            background: #FFB07C;
             padding: 20px;
             border-radius: 0px;
             width: 90%;
@@ -29,7 +29,7 @@
 
         h1 {
             margin-bottom: 20px;
-            color: #2b2b2b;
+            color: #FF7F50;
         }
 
         input {
@@ -45,7 +45,7 @@
             padding: 10px 20px;
             font-size: 16px;
             color: white;
-            background-color: #1273d6;
+            background-color: #FF9A76;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -53,7 +53,7 @@
         }
 
         button:hover {
-            background-color: #0063d6;
+            background-color: #FFCBA4;
         }
 
         .response {
