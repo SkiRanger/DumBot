@@ -7,7 +7,7 @@
         /* Basic styling for the UI */
         body {
             font-family: Arial, sans-serif;
-            background-color: #F5EBE0;
+            background-color: #FFFFFF;
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,17 +18,18 @@
 
         .container {
             text-align: center;
-            background: #F8EDEB;
+            background: #606060;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 0px;
             width: 90%;
-            max-width: 500px;
+            max-width: 1000px;
+            height: 70%;
+            max-height: 778px;
         }
 
         h1 {
             margin-bottom: 20px;
-            color: #333;
+            color: #2b2b2b;
         }
 
         input {
@@ -36,7 +37,7 @@
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 0px;
             margin-bottom: 15px;
         }
 
@@ -44,7 +45,7 @@
             padding: 10px 20px;
             font-size: 16px;
             color: white;
-            background-color: #F1CEBE;
+            background-color: #1273d6;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -52,21 +53,21 @@
         }
 
         button:hover {
-            background-color: #FFBAD9;
+            background-color: #0063d6;
         }
 
         .response {
             margin-top: 20px;
             font-size: 18px;
-            color: #555;
+            color: #FFFFFF;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Ask Your Question</h1>
+        <h1>DumBot - Powered by AI (Artificial Idiocy)</h1>
         <!-- Input Field -->
-        <input type="text" id="questionInput" placeholder="your question here" />
+        <input type="text" id="questionInput" placeholder="Your question here" />
         <br>
         <!-- Submit Button -->
         <button onclick="submitQuestion()">submit</button>
@@ -83,7 +84,22 @@
             const question = inputField.value.trim(); // Get user input and trim whitespace
 
             if (question) {
-                responseDiv.textContent = `u asked: "${question}"`; // Display the question
+                import OpenAI from "openai";
+                const openai = new OpenAI();
+                
+                const completion = await openai.chat.completions.create({
+                    model: "gpt-4o",
+                    messages: [
+                        { role: "system", content: "You are a helpful assistant." },
+                        {
+                            role: "user",
+                            content: "Write a haiku about recursion in programming.",
+                        },
+                    ],
+                });
+
+                responseDiv.textContent = 'This has executed, but not piped through the model';
+                //responseDiv.textContent = console.log(completion.choices[0].message);
             } else {
                 alert("please enter a valid question."); // Show an alert if input is empty
             }
